@@ -43,7 +43,6 @@ async function fetchAllProducts() {
     try {
         const response = await fetch(`${apiUrl}productos/findAll`, {
             method: 'GET',
-            mode: 'no-cors',
             headers: {
                 'Authorization': `Basic ${credentials}`,
                 'Content-Type': 'application/json'
