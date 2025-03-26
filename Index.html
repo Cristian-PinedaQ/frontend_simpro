@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header-container">
+            <h1 class="app-title">Gestión de Productos</h1>
+            <p>Seleccione una opción para gestionar los productos:</p>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#" onclick="listAllProducts()">Listar Todos los Productos</a></li>
+                <li><a href="#" onclick="showProductSearch()">Buscar Producto por Nombre</a></li>
+                <li><a href="#" onclick="showCreateProductForm()">Crear Nuevo Producto</a></li>
+            </ul>
+        </nav>
+        <main id="content">
+            <!-- Aquí se mostrará el contenido dinámico -->
+            <section id="product-list" class="section" style="display: none;">
+                <h2>Listado de Productos</h2>
+                <div id="product-table"></div>
+            </section>
+            <!-- En tu sección product-search -->
+<section id="product-search" class="section" style="display: none;">
+    <h2>Buscar Producto por Nombre</h2>
+    <div id="search-results"></div>
+    
+    <!-- Esta es la sección de detalles que debe mostrarse al seleccionar un producto -->
+    <div id="product-details" style="display: none;">
+        <h3>Detalles del Producto</h3>
+        <div id="product-detail-content"></div>
+        
+        <div class="action-buttons">
+            <button id="edit-btn" class="btn-edit">✏️ Editar</button>
+            <button id="delete-btn" class="btn-delete">🗑️ Eliminar</button>
+        </div>
+        
+        <div id="edit-form-container" style="display: none;">
+            <form id="edit-product-form"></form>
+        </div>
+    </div>
+</section>
+            <section id="create-product" class="section" style="display: none;">
+                <h2>Crear Nuevo Producto</h2>
+                <form id="create-product-form">
+                    <!-- Campos del producto -->
+                    <div class="form-group">
+                        <label for="name">Nombre del Producto:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Precio:</label>
+                        <input type="number" id="price" name="price" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Categoría:</label>
+                        <select id="category" name="category" required>
+                            <option value="">Seleccione una categoria</option>
+                            <option value="acabados">Acabados</option>
+                            <option value="electricidad">Electricidad</option>
+                            <option value="plomeria">Plomeria</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="employee">Empleado:</label>
+                        <input type="text" id="employee" name="employee" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryDate">Fecha de Entrega:</label>
+                        <input type="date" id="deliveryDate" name="deliveryDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="finish">Finalizado:</label>
+                        <select id="finish" name="finish" required>
+                            <option value="true">Sí</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+
+                    <!-- Campos del cliente -->
+                    <h3>Datos del Cliente</h3>
+                    <div class="form-group">
+                        <label for="customerSelect">Seleccionar Cliente:</label>
+                    <select id="customerSelect" name="customerSelect" required>
+                        <option value="">Seleccione un cliente</option>
+                    </select>
+                    </div>
+                    <input type="hidden" id="customerId" name="customerId" required> <!-- Campo oculto para el ID del cliente -->
+                    <!-- Botón de envío -->
+                    <button type="submit">Crear Producto</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <!-- Asegúrate de que el script esté antes del cierre del body -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+:root {
+    --primary-color: #007bff;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --success-color: #28a745;
+    --breakpoint-mobile: 576px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-desktop: 992px;
+}
+
+/* Reset y estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+/* Contenedor del encabezado */
+.header-container {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+/* Título principal */
+.app-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: #007bff;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+/* Subtítulos */
+.section-title {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    color: #495057;
+    text-align: center;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    position: relative;
+    max-width: 90%;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #00b4ff);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Responsive para pantallas muy pequeñas */
+@media (max-width: 400px) {
+    .app-title {
+        font-size: 1.5rem;
+    }
+    .section-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Responsive Container */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+.menu ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+@media (min-width: 768px) {
+    .menu ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.menu li {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Mínimo para mobile */
+}
+
+@media (min-width: 768px) {
+    table {
+        min-width: 100%;
+    }
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn-warning {
+    background-color: var(--warning-color);
+    color: #333;
+}
+
+/* Grid para formularios en desktop */
+@media (min-width: 768px) {
+    .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .full-width {
+        grid-column: span 2;
+    }
+}
+
+#product-details {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+}
+
+.product-info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 576px) {
+    .product-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .product-info-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.action-buttons button {
+    flex: 1 1 150px;
+}
+
+.search-container {
+    display: flex;
+    margin-bottom: 1.5rem;
+    flex-direction: column;
+}
+
+@media (min-width: 576px) {
+    .search-container {
+        flex-direction: row;
+    }
+}
+
+.search-input {
+    flex-grow: 1;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 576px) {
+    .search-input {
+        margin-bottom: 0;
+    }
+}
+
+.search-button {
+    padding: 0.75rem;
+}
+
+@media (max-width: 575.98px) {
+    .section {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .action-buttons button {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Ocultar columnas menos importantes en mobile */
+    .mobile-hidden {
+        display: none;
+    }
+}
+
+.section {
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 576px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: clamp(1.3rem, 4vw, 2rem);
+    margin-bottom: 0.75rem;
+}
+
